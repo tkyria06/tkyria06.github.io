@@ -5,6 +5,7 @@
 * License: https://bootstrapmade.com/license/
 */
 
+
 function myFunction() {
   var dots = document.getElementById("dots");
   var moreText = document.getElementById("more");
