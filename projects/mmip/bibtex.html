@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BibTeX - DRUMS</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-color: #050505;
+            --card-bg: #111111;
+            --text-primary: #ffffff;
+            --text-secondary: #a1a1aa;
+            --accent-cyan: #22d3ee;
+            --code-bg: #1e1e1e;
+            --border-color: #333;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* The Card Container */
+        .bibtex-card {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            background: rgba(17, 17, 17, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 0 40px rgba(34, 211, 238, 0.05);
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .title i { color: var(--accent-cyan); }
+
+        /* Copy Button */
+        .copy-btn {
+            background: transparent;
+            border: 1px solid var(--accent-cyan);
+            color: var(--accent-cyan);
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .copy-btn:hover {
+            background: rgba(34, 211, 238, 0.1);
+            box-shadow: 0 0 15px rgba(34, 211, 238, 0.2);
+        }
+
+        .copy-btn:active { transform: scale(0.96); }
+
+        /* Code Block */
+        .code-container {
+            background-color: var(--code-bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            overflow-x: auto;
+        }
+
+        pre {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #d4d4d4;
+            white-space: pre-wrap;
+        }
+
+        /* Simple Syntax Highlighting Colors */
+        .key { color: #9cdcfe; } /* Light Blue */
+        .value { color: #ce9178; } /* Orange/Brown */
+        .type { color: #569cd6; font-weight: bold; } /* Blue */
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bibtex-card">
+        <div class="header">
+            <div class="title">
+                <i class="fas fa-quote-left"></i>
+                <span>Cite this work</span>
+            </div>
+            <button class="copy-btn" onclick="copyBibtex()">
+                <i class="fas fa-copy"></i>
+                <span>Copy BibTeX</span>
+            </button>
+        </div>
+
+        <div class="code-container">
+            <!-- Note: The HTML inside 'pre' is purely text, we use spans only if we want to force colors, 
+                 but for a pure copy-paste, plain text is safer. 
+                 However, the style below keeps it looking like code. -->
+            <pre id="bibtex-content">@article{Kyriakou:2025:MMIP,
+ author    	= {Kyriakou, Theodoros and Aristidou, Andreas and Charalambous, Panayiotis},
+ title     	= {{M}ulti-{M}odal {I}nstrument {P}erformance: A musical database},
+ doi 	  	= {10.1111/cgf.70025},
+ journal   	= {Comput. Graph. Forum},
+ volume    	= {44},
+ number    	= {2},
+ pages     	= {e70025},
+ year 	  	= {2025},
+ publisher 	= {The Eurographics Association and John Wiley & Sons Ltd.},
+ ISSN 	  	= {},
+}
+</pre>
+        </div>
+    </div>
+
+    <script>
+        function copyBibtex() {
+            var bibtexText = document.getElementById("bibtex-content").innerText;
+            
+            navigator.clipboard.writeText(bibtexText).then(function() {
+                var btn = document.querySelector(".copy-btn");
+                var btnText = btn.querySelector("span:last-child");
+                var icon = btn.querySelector("i");
+                var originalText = btnText.innerText;
+                
+                // Success State
+                btn.style.backgroundColor = "var(--accent-cyan)";
+                btn.style.color = "#000";
+                btnText.innerText = "Copied!";
+                icon.className = "fas fa-check";
+                
+                // Reset after 2s
+                setTimeout(function() {
+                    btn.style.backgroundColor = "transparent";
+                    btn.style.color = "var(--accent-cyan)";
+                    btnText.innerText = "Copy BibTeX";
+                    icon.className = "fas fa-copy";
+                }, 2000);
+            }).catch(function(err) {
+                console.error('Failed to copy text: ', err);
+            });
+        }
+    </script>
+</body>
+</html>

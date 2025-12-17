@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project Title | Author Name</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <!-- Bulma & Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+  <style>
+    body { font-family: 'Noto Sans', sans-serif; background-color: #ffffff; color: #4a4a4a; }
+    
+    /* Typography */
+    .publication-title { font-family: 'Google Sans', sans-serif; font-weight: 700; margin-bottom: 0.5rem !important; }
+    .publication-venue { color: #22d3ee; font-weight: 600; font-size: 1.5rem; margin-bottom: 1.5rem !important; }
+    .publication-authors { font-family: 'Google Sans', sans-serif; font-size: 1.25rem; margin-bottom: 0.5rem; }
+    .author-block { display: inline-block; margin-right: 10px; }
+    
+    /* Videos & Images */
+    .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.1); background: #000; }
+    .video-container iframe, .video-container video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+    
+    .teaser-image { width: 100%; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
+
+    /* Links/Buttons */
+    .publication-links { margin-top: 2rem; margin-bottom: 1rem; }
+    .button.is-dark { background-color: #1f2937; border-color: transparent; color: #fff; transition: background 0.2s; }
+    .button.is-dark:hover { background-color: #374151; }
+    .external-link .icon { margin-right: 0.3rem; }
+
+    /* Sections */
+    .hero.teaser { padding-bottom: 2rem; }
+    .section { padding: 3rem 1.5rem; }
+    
+    /* Colors */
+    a { color: #22d3ee; transition: color 0.3s; }
+    a:hover { color: #3b82f6; }
+  </style>
+</head>
+<body>
+
+<!-- HEADER SECTION -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          
+          <!-- 1. TITLE -->
+          <h1 class="title is-1 publication-title">
+            Multi-Modal Instrument Performances (MMIP): A Musical Database
+          </h1>
+
+          <!-- 2. CONFERENCE / VENUE -->
+          <div class="publication-venue">
+            EUROGRAPHICS 2025 (London)
+          </div>
+
+          <!-- 3. AUTHORS -->
+          <div class="publication-authors">
+            <span class="author-block">
+              <a href="https://theodoroskyriakou.com" target="_blank">Theodoros Kyriakou</a><sup>1,2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://andreasaristidou.com/" target="_blank">Andreas Aristidou</a><sup>1,2</sup>
+            </span>
+            <span class="author-block">
+              <a href="https://totis77.github.io" target="_blank">Panayiotis Charalambous</a><sup>2</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-6 publication-authors" style="color: #666; margin-bottom: 1rem;">
+            <span class="author-block"><sup>1</sup>University of Cyprus,</span>
+            <span class="author-block"><sup>2</sup>CYENS Centre of Excellence</span>
+          </div>
+
+          <!-- 4. BUTTONS -->
+          <div class="publication-links">
+            <!-- PDF Link -->
+            <span class="link-block">
+              <a href="./Paper.pdf" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                <span>Paper</span>
+              </a>
+            </span>
+            <!-- Code Link -->
+             <span class="link-block">
+              <a href="https://github.com/tkyria06/UE_MIDI_Player" class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="fab fa-github"></i></span>
+                <span>Code</span>
+              </a>
+            </span>
+            <!-- Data Link -->
+            <!-- <span class="link-block">
+              <a href="#" class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="fas fa-database"></i></span>
+                <span>Dataset</span>
+              </a>
+            </span> -->
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. TEASER (IMAGE) -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      
+      <!-- Teaser Image -->
+      <img src="./Teaser.png" alt="DRUMS System Overview" class="teaser-image">
+      
+      <!-- Teaser Description -->
+      <h2 class="subtitle has-text-centered is-6" style="margin-top: 1rem; color: #666;">
+        Performance Recording: The top section shows the drum recording, the middle features the digital piano, and the bottom displays the guitar recording. On the left side, there is a top-down view of the drums and digital piano, and the optical MoCap data for the guitar. Four snapshots from the video recording, taken from different camera angles, are also presented for each instrument. On the right, a 3D motion reconstruction is displayed, using the default actor model from Rokoko Studio software to accurately represent the performer's movements.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<!-- 6. ABSTRACT -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Musical instrument performances are multimodal creative art forms that integrate audiovisual elements, resulting from musicians' interactions with instruments through body movements, finger actions, and facial expressions. Digitizing such performances for archiving, streaming, analysis, or synthesis requires capturing every element that shapes the overall experience, which is crucial for preserving the performance's essence. In this work, following current trends in large-scale dataset development for deep learning analysis and generative models, we introduce the Multi-Modal Instrument Performances (MMIP) database (\href{https://mmip.cs.ucy.ac.cy}{https://mmip.cs.ucy.ac.cy}). This is the first dataset to incorporate synchronized high-quality 3D motion capture data for the body, fingers, facial expressions, and instruments, along with audio, multi-angle videos, and MIDI data. The database currently includes 3.5 hours of performances featuring three instruments: guitar, piano, and drums. Additionally, we discuss the challenges of acquiring these multi-modal data, detailing our approach to data collection, signal synchronization, annotation, and metadata management. Our data formats align with industry standards for ease of use, and we have developed an open-access online repository that offers a user-friendly environment for data exploration, supporting data organization, search capabilities, and custom visualization tools. Notable features include a MIDI-to-instrument animation project for visualizing the instruments and a script for playing back FBX files with synchronized audio in a web environment.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. PRESENTATION VIDEO (YouTube) -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Video Presentation</h2>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="video-container">
+          <!-- Replace src with your YouTube Embed or local video file -->
+          <iframe src="https://www.youtube.com/embed/JMn71eTF-Wo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. BIBTEX -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-4">BibTeX</h2>
+    
+    <!-- Container for Code + Copy Button -->
+    <div class="bibtex-container" style="position: relative;">
+      <button class="button is-small is-dark is-outlined copy-btn" onclick="copyBibtex()" style="position: absolute; top: 10px; right: 10px; z-index: 10;">
+        <span class="icon"><i class="fas fa-copy"></i></span>
+        <span class="btn-text">Copy</span>
+      </button>
+      
+      <pre><code id="bibtex-content">@article{Kyriakou:2025:MMIP,
+ author    	= {Kyriakou, Theodoros and Aristidou, Andreas and Charalambous, Panayiotis},
+ title     	= {{M}ulti-{M}odal {I}nstrument {P}erformance: A musical database},
+ doi 	  	= {10.1111/cgf.70025},
+ journal   	= {Comput. Graph. Forum},
+ volume    	= {44},
+ number    	= {2},
+ pages     	= {e70025},
+ year 	  	= {2025},
+ publisher 	= {The Eurographics Association and John Wiley & Sons Ltd.},
+ ISSN 	  	= {},
+}
+</code></pre>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>
+        Website template adapted from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- JavaScript for Copy Function -->
+<script>
+  function copyBibtex() {
+    // Get the text content
+    var bibtexText = document.getElementById("bibtex-content").innerText;
+    
+    // Copy to clipboard
+    navigator.clipboard.writeText(bibtexText).then(function() {
+      // Success feedback
+      var btn = document.querySelector(".copy-btn .btn-text");
+      var originalText = btn.innerText;
+      var icon = document.querySelector(".copy-btn .icon i");
+      
+      // Change button text temporarily
+      btn.innerText = "Copied!";
+      icon.className = "fas fa-check";
+      
+      // Reset after 2 seconds
+      setTimeout(function() {
+        btn.innerText = originalText;
+        icon.className = "fas fa-copy";
+      }, 2000);
+    }, function(err) {
+      console.error('Could not copy text: ', err);
+    });
+  }
+</script>
+
+</body>
+</html>
+
